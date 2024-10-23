@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/im_game"
+    tools:context=".GameActivity">
+
+    <TextView
+        android:id="@+id/username_display"
+        android:layout_width="246dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="50dp"
+        android:padding="16dp"
+        android:text="Username:"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/word_hint"
+        app:layout_constraintEnd_toStartOf="@+id/score_display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/score_display"
+        android:layout_width="138dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:text="Score: 100"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/timer_display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/username_display"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/word_hint"
+        android:layout_width="350dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Hint?"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guess_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_display"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/letter_hint_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#e67e22"
+        android:text="Letter Hint (-5)"
+        app:layout_constraintBottom_toTopOf="@+id/fetch_button"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guess_input"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/word_length_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="150dp"
+        android:backgroundTint="#e67e22"
+        android:text="Word Length (-5)"
+        app:layout_constraintBottom_toTopOf="@+id/leaderboard_view"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guess_input"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/guess_input"
+        style="@style/WordStyleBox"
+        android:layout_width="225dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/edit_text_background"
+        android:hint="Enter your guess"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/letter_hint_button"
+        app:layout_constraintEnd_toStartOf="@+id/submit_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_hint"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/submit_button"
+        style="@style/WordStyleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="45dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:text="Submit"
+        app:layout_constraintBottom_toTopOf="@+id/word_length_button"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word_hint"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/timer_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="23dp"
+        android:text="Time: 0s"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/word_hint"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_display"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/fetch_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="237dp"
+        android:text="Leaderboard"
+        app:layout_constraintBottom_toTopOf="@+id/leaderboard_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/letter_hint_button"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/leaderboard_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="106dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/leaderboard_background"
+        android:padding="60dp"
+        android:text="Leaderboard will appear here"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/reset_name_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fetch_button"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/reset_name_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="564dp"
+        android:text="Change User"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timer_display" /> <!-- Added margins for spacing -->
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
